@@ -1,0 +1,8 @@
+../ldmudefundeklin/__init__.py
+../ldmudefundeklin/deklin.py
+PKG-INFO
+SOURCES.txt
+dependency_links.txt
+entry_points.txt
+not-zip-safe
+top_level.txt

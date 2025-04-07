@@ -1,0 +1,5 @@
+[ldmud_efun]
+create_deklin_message = ldmudefundeklin.deklin:create_deklin_message
+
+[ldmud_type]
+deklin_message = ldmudefundeklin.deklin:deklin_message

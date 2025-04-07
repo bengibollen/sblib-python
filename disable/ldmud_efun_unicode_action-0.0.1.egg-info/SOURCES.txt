@@ -1,0 +1,10 @@
+README.md
+setup.py
+ldmud_efun_unicode_action.egg-info/PKG-INFO
+ldmud_efun_unicode_action.egg-info/SOURCES.txt
+ldmud_efun_unicode_action.egg-info/dependency_links.txt
+ldmud_efun_unicode_action.egg-info/entry_points.txt
+ldmud_efun_unicode_action.egg-info/not-zip-safe
+ldmud_efun_unicode_action.egg-info/top_level.txt
+ldmudefunaction/__init__.py
+ldmudefunaction/action.py

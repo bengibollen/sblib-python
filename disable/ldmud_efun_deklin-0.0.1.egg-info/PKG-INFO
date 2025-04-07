@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: ldmud-efun-deklin
+Version: 0.0.1
+Summary: Multi-recipient messages for UNItopia
+Author: UNItopia Administration
+Author-email: mudadm@UNItopia.DE
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+
+Offers type and efun for handling messages towards multiple recipients.

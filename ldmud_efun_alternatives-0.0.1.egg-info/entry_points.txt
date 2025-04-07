@@ -1,0 +1,3 @@
+[ldmud_efun]
+json_parse = ldmudefunalternatives.json:efun_json_parse
+json_serialize = ldmudefunalternatives.json:efun_json_serialize

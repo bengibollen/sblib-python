@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: ldmud-efun-spell
+Version: 0.0.1
+Summary: Spelling Efuns for UNItopia
+Author: UNItopia Administration
+Author-email: mudadm@UNItopia.DE
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+
+Offers efun for interaction with the HunSpell library.

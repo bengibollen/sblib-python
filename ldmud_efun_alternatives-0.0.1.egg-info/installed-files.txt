@@ -1,0 +1,8 @@
+../ldmudefunalternatives/__init__.py
+../ldmudefunalternatives/json.py
+PKG-INFO
+SOURCES.txt
+dependency_links.txt
+entry_points.txt
+not-zip-safe
+top_level.txt

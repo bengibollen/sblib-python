@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+ldmud_efun_alternatives.egg-info/PKG-INFO
+ldmud_efun_alternatives.egg-info/SOURCES.txt
+ldmud_efun_alternatives.egg-info/dependency_links.txt
+ldmud_efun_alternatives.egg-info/entry_points.txt
+ldmud_efun_alternatives.egg-info/not-zip-safe
+ldmud_efun_alternatives.egg-info/top_level.txt
+ldmudefunalternatives/__init__.py
+ldmudefunalternatives/json.py

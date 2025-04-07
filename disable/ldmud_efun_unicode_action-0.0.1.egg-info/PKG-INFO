@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: ldmud-efun-unicode-action
+Version: 0.0.1
+Summary: add_action() replacement with transliteration for UNItopia
+Author: UNItopia Administration
+Author-email: mudadm@UNItopia.DE
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+
+Replaces add_action() to register original and transliterated commands.

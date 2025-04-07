@@ -1,0 +1,4 @@
+[ldmud_efun]
+spell_check = ldmudefunspell.spell:efun_spell_check
+spell_reload = ldmudefunspell.spell:efun_spell_reload
+spell_suggest = ldmudefunspell.spell:efun_spell_suggest
