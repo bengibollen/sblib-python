@@ -1,10 +1,10 @@
 import sys
 import os
 
-# Add the directory containing ldmudefuns to sys.path
+# Add the repository root so the private sblib package can be imported.
 sys.path.append(os.path.dirname(__file__))
 
-from ldmudefuns.startup import startup
+from sblib.startup import startup
 
 startup()
 
