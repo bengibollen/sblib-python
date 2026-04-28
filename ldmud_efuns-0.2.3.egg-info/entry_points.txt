@@ -1,3 +1,0 @@
-[ldmud_efun]
-python_efun_help = ldmudefuns.help:python_efun_help
-python_reload = ldmudefuns.reload:reload_modules

@@ -1,3 +1,0 @@
-[ldmud_efun]
-add_action = ldmudefunaction.action:efun_add_action
-query_verb_ascii = ldmudefunaction.action:efun_query_verb_ascii
