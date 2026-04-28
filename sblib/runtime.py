@@ -6,12 +6,7 @@ import ldmud
 
 MODULES = (
     "sblib.efuns.help",
-    "sblib.efuns.reload",
     "sblib.efuns.json",
-)
-
-RELOADABLE_MODULES = tuple(
-    module_name for module_name in MODULES if module_name != "sblib.efuns.reload"
 )
 
 _registered_efuns = {}
@@ -36,6 +31,29 @@ def get_registered_type(name: str):
     return _registered_types.get(name)
 
 
+def python_reload():
+    """
+    SYNOPSIS
+            void python_reload()
+
+    DESCRIPTION
+            Reloads the Python efun modules that are explicitly configured for
+            this mudlib and registers them again.
+
+            Before reloading, the function on_reload() is called in the module
+            if it exists.
+
+    SEE ALSO
+            python_efun_help(E)
+    """
+
+    reload_modules()
+
+
+def register_core_efuns() -> None:
+    register_efun("python_reload", python_reload)
+
+
 def register_modules(module_names=MODULES) -> None:
     for module_name in module_names:
         try:
@@ -45,7 +63,7 @@ def register_modules(module_names=MODULES) -> None:
             traceback.print_exc()
 
 
-def reload_modules(module_names=RELOADABLE_MODULES) -> None:
+def reload_modules(module_names=MODULES) -> None:
     for module_name in module_names:
         module = sys.modules.get(module_name)
         if module is None:
