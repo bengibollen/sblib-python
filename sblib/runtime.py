@@ -5,6 +5,7 @@ import traceback
 import ldmud
 
 MODULES = (
+    "sblib.efuns.ai",
     "sblib.efuns.help",
     "sblib.efuns.json",
 )
@@ -51,6 +52,7 @@ def python_reload():
 
 
 def register_core_efuns() -> None:
+    print("Registering core Python efuns")
     register_efun("python_reload", python_reload)
 
 

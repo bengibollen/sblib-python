@@ -11,7 +11,7 @@
 - `__main__.py` is the bootstrap entry for LDMud. It appends the repository root to `sys.path`, imports `sblib.startup.startup`, and runs it.
 - `sblib/startup.py` is the explicit startup path for this mudlib. It does not discover installed packages; it registers a fixed set of mudlib-owned Python modules.
 - `sblib/runtime.py` is the central registry helper. It owns the list of active Python modules, registers core efuns such as `python_reload`, wraps `ldmud.register_efun()` / `register_type()`, keeps an in-process registry for help/introspection, and implements explicit module reloads.
-- `sblib/efuns/help.py` and `sblib/efuns/json.py` are the active efun modules loaded by startup.
+- `sblib/efuns/ai.py`, `sblib/efuns/help.py`, and `sblib/efuns/json.py` are the active efun modules loaded by startup.
 - `disable/` contains extra Python efun/type examples that are **not** part of the active startup path. Treat them as examples only unless you explicitly wire one into `sblib.runtime.MODULES`.
 
 ## Key conventions
