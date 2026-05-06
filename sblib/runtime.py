@@ -2,12 +2,18 @@ import importlib
 import sys
 import traceback
 
-import ldmud
+import ldmud # type: ignore
 
 MODULES = (
     "sblib.efuns.ai",
     "sblib.efuns.help",
     "sblib.efuns.json",
+)
+
+SUPPORT_MODULES = (
+    "sblib.ai.providers",
+    "sblib.ai.store",
+    "sblib.ai.service",
 )
 
 _registered_efuns = {}
@@ -65,7 +71,7 @@ def register_modules(module_names=MODULES) -> None:
             traceback.print_exc()
 
 
-def reload_modules(module_names=MODULES) -> None:
+def reload_modules(module_names=SUPPORT_MODULES + MODULES) -> None:
     for module_name in module_names:
         module = sys.modules.get(module_name)
         if module is None:

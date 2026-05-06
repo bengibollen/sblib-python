@@ -2,6 +2,8 @@
 
 `ai_interpret_command()` is a deterministic first-pass helper for unknown command handling. It does **not** call an LLM yet. Its job is to reject obvious garbage input and recover likely commands from the local room/player context.
 
+For the asynchronous semantic stage, see `docs/ai-async.md`.
+
 ## Efun
 
 ```lpc

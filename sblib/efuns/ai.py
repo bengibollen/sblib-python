@@ -3,6 +3,7 @@ import re
 
 import ldmud
 
+from sblib.ai import service
 from sblib import runtime
 
 
@@ -336,5 +337,74 @@ def ai_interpret_command(input_text: str, context: ldmud.Mapping) -> ldmud.Mappi
     )
 
 
+def ai_submit_intent(input_text: str, context: ldmud.Mapping) -> str:
+    """
+    SYNOPSIS
+
+            string ai_submit_intent(string input, mapping context)
+
+    DESCRIPTION
+            Queues asynchronous semantic command interpretation and returns a
+            request id immediately.
+
+            The actual work is performed by the async AI service layer. This
+            efun should only be used after the cheap deterministic helper
+            ai_interpret_command(E) has failed to find a strong match.
+
+            The request can be checked later with ai_query_result(E) and removed
+            with ai_discard_result(E).
+
+    SEE ALSO
+            ai_interpret_command(E), ai_query_result(E), ai_discard_result(E)
+    """
+
+    return service.submit_intent(input_text, to_python(context))
+
+
+def ai_query_result(request_id: str):
+    """
+    SYNOPSIS
+
+            mapping ai_query_result(string request_id)
+
+    DESCRIPTION
+            Returns 0 while the asynchronous request is still pending.
+
+            Once finished, returns a mapping containing at least the request id,
+            completion status, and either a normalized command result or an error
+            message.
+
+    SEE ALSO
+            ai_submit_intent(E), ai_discard_result(E)
+    """
+
+    result = service.query_result(request_id)
+    if result is None:
+        return 0
+    return to_lpc(result)
+
+
+def ai_discard_result(request_id: str) -> int:
+    """
+    SYNOPSIS
+
+            int ai_discard_result(string request_id)
+
+    DESCRIPTION
+            Removes a completed asynchronous AI result. If the request is still
+            pending, it is cancelled first.
+
+            Returns 1 if a request existed and was removed, 0 otherwise.
+
+    SEE ALSO
+            ai_submit_intent(E), ai_query_result(E)
+    """
+
+    return 1 if service.discard_result(request_id) else 0
+
+
 def register() -> None:
     runtime.register_efun("ai_interpret_command", ai_interpret_command)
+    runtime.register_efun("ai_submit_intent", ai_submit_intent)
+    runtime.register_efun("ai_query_result", ai_query_result)
+    runtime.register_efun("ai_discard_result", ai_discard_result)
